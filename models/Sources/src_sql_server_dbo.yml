@@ -99,3 +99,8 @@ sources:
           - name: total_orders
           - name: updated_at
           - name: user_id
+            tests:
+                - test_usuario_unico
+                - relationships:
+                    to: source('sql_server_dbo','addresses')
+                    field: address_id
