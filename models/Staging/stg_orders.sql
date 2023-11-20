@@ -17,6 +17,7 @@ renamed_casted AS (
         , user_id
         , shipping_service
         , status
+        , decode(promo_id, '', '999', {{dbt_utils.surrogate_key(['promo_id']) }} ) as id_promo
         , order_total
         , order_cost
         , shipping_cost
